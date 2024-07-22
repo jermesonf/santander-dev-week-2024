@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    # https://railway.app
+    # Variaveis -> PGHOST, PGPORT, PGDATABASE, PGUSER, PGPASSWORD
+    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      # Ao usar a primeira vez o banco deve se usar ddl-auto: create
+      # Depois de criar com ddl-create mudar para ddl-auto: validate para não ficar recriando toda vez que inicializar
+      ddl-auto: create
